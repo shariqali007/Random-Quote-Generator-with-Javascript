@@ -62,23 +62,20 @@ const quotes = [
 /**
  * Returns a random quote from quotes array using randomNum.
  *
- * @param {number} array - The highest number value.
- * @return {string} The random Quote.
+ * @param {number} array - The array of quotes.
+ * @return {string} randomQuote - The random Quote.
  */
 
 function getRandomQuote(array) {
-  let randomQuote = [];
-  let randomNum = Math.floor(Math.random() * array.length);
-  if (array.indexOf() === randomNum) {
-    randomQuote.push(array.quote);
-  }
+  const randomNum = Math.floor(Math.random() * array.length);
+  const randomQuote = array[randomNum];
   return randomQuote;
 }
-
 
 /***
  * `printQuote` function
 ***/
+
 
 
 
