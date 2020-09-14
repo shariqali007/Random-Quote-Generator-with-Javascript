@@ -61,7 +61,7 @@ const quotes = [
 
 /**
  * Returns a random quote from quotes array using randomNum.
- *
+ * 
  * @param {number} array - The array of quotes.
  * @return {string} randomQuote - The random Quote.
  */
@@ -72,12 +72,30 @@ function getRandomQuote(array) {
   return randomQuote;
 }
 
+console.log(getRandomQuote(quotes));
 /***
  * `printQuote` function
 ***/
+/**
+ * Returns full HTML string displaying a random quote.
+ * 
+ */
 
+function printQuote() {
+  let randomQuote = getRandomQuote(quotes);
+  let displayString = `<p class="quote">${randomQuote.quote}</p>
+  <p class="source">${randomQuote.source}`;
+  if (randomQuote.citation) {
+    displayString += `<span class="citation">${randomQuote.citation}</span>`;
+  }  
+  if (randomQuote.year){
+    displayString += `<span class="year">${randomQuote.year}</span>`;
+  }
+  displayString += `</p>`
+  return displayString;
+}
 
-
+document.getElementById('quote-box').innerHTML = printQuote();
 
 /***
  * click event listener for the print quote button
